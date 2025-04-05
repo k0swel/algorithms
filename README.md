@@ -25,9 +25,27 @@ void bubble_sort(std::vector<int>& massiv) {
 ```
 
 ## Сортировка выбором.
-_Сортировка выбором_ представляет собой вид сортировки, засчёт которого алгоритм ВЫБИРАЕТ элемент массива, который нужно разместить в конец отсортированного части.
-Иллюстрация ниже демонстрирует выбор минимальногого неотсортированного элемента.
+_Сортировка выбором_ представляет собой вид сортировки, за счёт которого алгоритм ВЫБИРАЕТ элемент массива, который нужно разместить в конец отсортированного части.
+Иллюстрация ниже демонстрирует выбор минимальногого неотсортированного элемента. Сложность: O(N^2).
 
+
+![selection-600](https://github.com/user-attachments/assets/99ccc41e-ad1f-43e1-9523-1c327767786d)
+
+Реализация на C++
+```
+    for (int first_iterator = 0; first_iterator < massiv.size(); first_iterator++) {
+        int min_index = first_iterator;
+        for (int i = first_iterator; i < massiv.size(); i++) {
+            if (massiv[i] < massiv[min_index])
+                min_index = i;
+        }
+        if (first_iterator != min_index) {
+            int temp = massiv[first_iterator];
+            massiv[first_iterator] = massiv[min_index];
+            massiv[min_index] = temp;
+        }
+    }
+```
 
 
 
