@@ -1,5 +1,6 @@
 # Виды сортировок массивов
 * [_Сортировка пузырьком;_](https://github.com/k0swel/types-of-sorting/tree/sort?tab=readme-ov-file#%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BF%D1%83%D0%B7%D1%8B%D1%80%D1%8C%D0%BA%D0%BE%D0%BC)
+* [_Сортировка выбором;_](https://github.com/k0swel/algorithms/blob/sort/%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D0%BE%D0%BC/%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D0%BE%D0%BC.cpp)
 ## Сортировка пузырьком.
 Представляет собой сортировку, которая осуществляется путём перестановки соседних элементов в порядке возрастания/убывания. Не очень эффективных алгоритм, поэтому его используют лишь в образовательных целях и не рекомендуют использовать в реальных проектах.
 Сложность: O(N^2).
@@ -31,7 +32,7 @@ _Сортировка выбором_ представляет собой вид
 
 ![selection-600](https://github.com/user-attachments/assets/99ccc41e-ad1f-43e1-9523-1c327767786d)
 
-Реализация на C++
+[Реализация на C++](https://github.com/k0swel/algorithms/blob/sort/%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D0%BE%D0%BC/%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D0%BE%D0%BC.cpp)
 ```
     for (int first_iterator = 0; first_iterator < massiv.size(); first_iterator++) {
         int min_index = first_iterator;
