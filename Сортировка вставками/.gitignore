@@ -1,0 +1,11 @@
+.vs/
+CMake*/
+insertion\ sort/
+x64/
+CMake*.*
+*.cmake
+*.sln
+*.vcxproj
+*.vcxproj.*
+Makefile
+*.exe
