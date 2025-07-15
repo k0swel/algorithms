@@ -9,6 +9,7 @@ int write_program_to_regedit(const wchar_t* name, const wchar_t* path) {
     // path = путь к программе, которую нужно добавить в автозапуск.
     name[]
     HKEY autoup_regedit_key;
+    // ключ можно даже не открывать. По факту мы можем использовать RegSetValue и макрос HKEY_CURRENT_USER (в другом аргументе указать нужный нам путь относительно этого макроса).
     LSTATUS status = RegOpenKeyExW(HKEY_LOCAL_MACHINE, L"Software\\Microsoft\\Windows\\CurrentVersion\\Run", 0, KEY_SET_VALUE, &autoup_regedit_key);
     if (status != ERROR_SUCCESS) { // открываем ключ реестра
         std::wcerr << "Ошибки при открытии ключа реестра. Возможно указан некорректный path в реестре!" << std::endl;
@@ -27,12 +28,14 @@ int write_program_to_regedit(const wchar_t* name, const wchar_t* path) {
 void del_program_from_startup(const wchar_t* name) {
     // name - значение записи из ключа реестра, которое нужно удалить
     HKEY autoup_regedit_value_delete;
+    // ключ можно даже не открывать. По факту мы можем использовать RegSetValue и макрос HKEY_CURRENT_USER (в другом аргументе указать нужный нам путь относительно этого макроса).
     LSTATUS status = RegOpenKeyExW(HKEY_LOCAL_MACHINE, L"Software\\Microsoft\\Windows\\CurrentVersion\\Run", 0, KEY_SET_VALUE, &autoup_regedit_value_delete);
     if (status != ERROR_SUCCESS) {
         std::wcerr << "Ошибка при открытии ключа реестра (ВОЗМОЖНО программа запущена не от имени администратора)! " << std::endl;
         std::wcerr << "Ошибка = " << status << std::endl;
         return;
     }
+    // ключ можно даже не открывать. По факту мы можем использовать RegSetValue и макрос HKEY_CURRENT_USER (в другом аргументе указать нужный нам путь относительно этого макроса).
     status = RegDeleteValueW(autoup_regedit_value_delete, name);
     if (status != ERROR_SUCCESS) {
         std::wcerr << "Ошибка при удалении значения из ключа реестра!." << std::endl;
